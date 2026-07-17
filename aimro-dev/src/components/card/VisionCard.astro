@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    number: string;
+    title: string;
+    icon: string;
+    points: string[];
+    featured?: boolean;
+    ai?: boolean;
+}
+
+const {
+    number,
+    title,
+    icon,
+    points,
+    featured = false,
+    ai = false,
+} = Astro.props;
+---
+
+<div
+    class:list={[
+        "group rounded-[2rem] border p-8 transition-all duration-300",
+        featured
+            ? "border-primary bg-primary/5"
+            : "border-gray-300 hover:border-primary/40",
+    ]}
+>
+    <!-- Icon -->
+    <div class="mb-8 flex justify-center">
+        <div class="relative">
+            <div
+                class:list={[
+                    `flex h-28 w-28 items-center justify-center rounded-full 
+                    transition-all duration-300`,
+                    featured
+                        ? "bg-primary/10"
+                        : "bg-zinc-900 group-hover:bg-primary/5",
+                ]}
+            >
+                <Icon name={icon} class="h-16 w-16 text-primary" />
+            </div>
+
+            {
+                ai && (
+                    <div
+                        class="absolute -right-2 -top-2
+                        h-12 w-12 
+                        flex  items-center justify-center 
+                        rounded-full border 
+                        border-primary bg-secondary shadow-sm"
+                    >
+                        <Icon name="mdi:brain" class="h-7 w-7 text-primary" />
+                    </div>
+                )
+            }
+        </div>
+    </div>
+
+    <span
+        class="text-primary text-sm font-semibold
+            tracking-widest rounded-full
+            border border-primary
+            p-2"
+    >
+        {number}
+    </span>
+
+    <h3 class="mt-4 text-2xl font-bold">
+        {title}
+    </h3>
+
+    <ul class="mt-8 space-y-4 text-gray-500">
+        {
+            points.map((point) => (
+                <li class="flex gap-3">
+                    <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                    <span>{point}</span>
+                </li>
+            ))
+        }
+    </ul>
+</div>

@@ -1,0 +1,128 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="py-16">
+    <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <!-- Heading -->
+        <div class="max-w-3xl space-y-4">
+            <p
+                class="text-primary text-xl font-semibold uppercase tracking-tight"
+            >
+                Challenge & Opportunity
+            </p>
+
+            <h2 class="text-5xl font-bold leading-tight">
+                U.S. manufacturing faces structural bottlenecks.
+            </h2>
+
+            <p class="text-lg leading-8 text-gray-500">
+                Domestic production and reshoring efforts are accelerating, but
+                manufacturers continue to struggle with labor shortages,
+                production knowledge, and automation that cannot adapt to modern
+                manufacturing environments.
+            </p>
+        </div>
+
+        <div class="mt-16 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <!-- Challenges -->
+            <div class="rounded-[2rem] border border-gray-300 p-8">
+                <div class="mb-8 flex items-center gap-4">
+                    <div
+                        class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10"
+                    >
+                        <Icon name="mdi:factory" class="h-9 w-9 text-primary" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold">
+                            Manufacturing Challenges
+                        </h3>
+
+                        <p class="mt-2 text-gray-500">
+                            Critical obstacles preventing scalable production.
+                        </p>
+                    </div>
+                </div>
+
+                <ul class="space-y-8">
+                    <li class="flex gap-4">
+                        <span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"
+                        ></span>
+                        <span class="text-lg text-gray-600">
+                            Skilled labor shortage across manufacturing.
+                        </span>
+                    </li>
+
+                    <li class="flex gap-4">
+                        <span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"
+                        ></span>
+                        <span class="text-lg text-gray-600">
+                            Labor skills do not scale across facilities.
+                        </span>
+                    </li>
+
+                    <li class="flex gap-4">
+                        <span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"
+                        ></span>
+                        <span class="text-lg text-gray-600">
+                            Lack of production knowledge and expertise.
+                        </span>
+                    </li>
+
+                    <li class="flex gap-4">
+                        <span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"
+                        ></span>
+                        <span class="text-lg text-gray-600">
+                            Traditional automation is rigid and difficult to
+                            adapt.
+                        </span>
+                    </li>
+
+                    <li class="flex gap-4">
+                        <span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"
+                        ></span>
+                        <span class="text-lg text-gray-600">
+                            High deployment and maintenance costs.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Opportunity -->
+            <div class="flex flex-col gap-8">
+                <div
+                    class="rounded-[2rem] border border-primary bg-primary/5 p-8"
+                >
+                    <p
+                        class="text-sm font-semibold uppercase tracking-[0.2em] text-primary"
+                    >
+                        Domestic Manufacturing
+                    </p>
+
+                    <h3 class="mt-4 text-6xl font-bold text-primary">$1.36T</h3>
+
+                    <p class="mt-4 text-lg leading-7 text-gray-600">
+                        Annual U.S. domestic manufacturing employee
+                        compensation.
+                    </p>
+                </div>
+
+                <div class="rounded-[2rem] border border-gray-300 p-8">
+                    <p
+                        class="text-sm font-semibold uppercase tracking-[0.2em] text-primary"
+                    >
+                        Reshoring Opportunity
+                    </p>
+
+                    <h3 class="mt-6 text-6xl font-bold">$800B</h3>
+
+                    <p class="mt-4 text-lg leading-7 text-gray-600">
+                        Potential annual employee compensation from U.S.
+                        reshoring manufacturing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import "@/styles/global.css";
+
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const {
+    title = `AIM Robots`,
+    description = `Our mission is to create a skilled workforce from robots, enhancing productivity and efficiency in U.S. manufacturing. I oversee the strategic direction of the company, ensuring our innovative products meet industry demands while fostering a culture of continuous improvement.`,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>{title}</title>
+
+        <meta name="description" content={description} />
+        <meta name="keywords" content="" />
+        <meta name="author" content="AIM Robots" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={Astro.url.href} />
+        <meta property="og:site_name" content="Y3D Technologies" />
+        <meta property="og:image" content="/og-image.jpg" />
+
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={Astro.url.href} />
+    </head>
+
+    <body class="min-h-screen flex flex-col">
+        <Header />
+
+        <main class="flex-1">
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
+</html>

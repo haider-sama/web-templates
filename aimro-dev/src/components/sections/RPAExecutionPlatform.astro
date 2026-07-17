@@ -1,0 +1,102 @@
+---
+import RobotProductCard from "@/components/card/RobotProductCard.astro";
+
+const products = [
+    {
+        title: "Articulated Robots",
+        image: "/images/articulated-robot.jpg",
+        description:
+            "4-, 6-, and 7-axis articulated robotic arms designed for flexible industrial automation.",
+    },
+    {
+        title: "SCARA Robots",
+        image: "/images/scara-robot.jpg",
+        description:
+            "High-speed precision robots optimized for assembly, electronics, and repetitive manufacturing tasks.",
+    },
+    {
+        title: "Delta Robots",
+        image: "/images/delta-robot.png",
+        description:
+            "Rapid pick-and-place robotic systems built for high-throughput production environments.",
+    },
+    {
+        title: "Linear Robots",
+        image: "/images/linear-robot.jpeg",
+        description:
+            "Cost-effective and robust automation solutions for scalable manufacturing operations.",
+    },
+    {
+        title: "Automated Guided Vehicles",
+        image: "/images/agv.jpg",
+        description:
+            "Autonomous material handling platforms supporting 500 kg–1.5 ton payload capacities.",
+    },
+    {
+        title: "Autonomous Mobile Robots",
+        image: "/images/amr.png",
+        description:
+            "Intelligent goods handling and transportation systems for modern factories and warehouses.",
+    },
+    {
+        title: "AI Vision Systems",
+        image: "/images/vision-system.png",
+        description:
+            "Advanced machine vision cameras enabling quality inspection and intelligent robotic perception.",
+    },
+    {
+        title: "Smart Customized Fixtures & Grippers",
+        image: "/images/gripper.png",
+        description:
+            "Hundreds of specialized end-of-arm tooling solutions with integrated communication capabilities.",
+    },
+];
+---
+
+<section class="py-16">
+    <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <!-- Heading -->
+        <div class="max-w-4xl space-y-4">
+            <p
+                class="text-primary text-xl font-semibold uppercase tracking-tight"
+            >
+                U.S.-Based RPA Execution Platform
+            </p>
+
+            <h2 class="text-5xl font-bold leading-tight">
+                Complete portfolio of industrial robotic automation products
+                with proven implementation systems.
+            </h2>
+
+            <p class="text-lg leading-8 text-gray-500">
+                Proven robot hardware, robotic automation systems, quality
+                inspections solutions, AGV/AMRmaterials handling systems,
+                warehouse automation systems, and deployment workflows from
+                mature commercial implementations.
+            </p>
+        </div>
+
+        <!-- Products -->
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {products.map((product) => <RobotProductCard {...product} />)}
+        </div>
+
+        <!-- Bottom points -->
+        <div class="mt-8 rounded-[2rem] border border-gray-300 p-8">
+            <ul class="space-y-4 text-lg text-gray-600">
+                <li class="flex gap-2">
+                    <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+                    Proven robot hardware, robotic automation systems, quality inspection
+                    solutions, AGV/AMR material handling systems, warehouse automation
+                    systems, and deployment workflows from mature commercial implementations.
+                </li>
+
+                <li class="flex gap-2">
+                    <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+                    Reshoring hardware production to the U.S. improves supply chain
+                    safety, certification readiness, and overall cost efficiency.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

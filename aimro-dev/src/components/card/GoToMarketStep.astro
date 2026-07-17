@@ -1,0 +1,79 @@
+---
+interface Props {
+    number: string;
+    title: string;
+    points: string[];
+    last?: boolean;
+}
+
+const { number, title, points, last = false } = Astro.props;
+---
+
+<div class="relative flex gap-8">
+    <!-- Timeline -->
+
+    <div class="relative flex w-16 shrink-0 justify-center">
+        {
+            !last && (
+                <div
+                    class="absolute
+                    top-12
+                    bottom-0
+                    w-px
+                    bg-gray-300"
+                />
+            )
+        }
+
+        <div
+            class="relative
+            flex
+            h-12
+            w-12
+            items-center
+            justify-center
+            rounded-xl
+            bg-primary
+            text-lg
+            font-bold
+            text-white"
+        >
+            {number}
+        </div>
+
+        <div
+            class="absolute
+            left-[3.5rem]
+            top-6
+            h-px
+            w-8
+            bg-gray-300"
+        >
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="pb-16">
+        <h3 class="text-2xl font-bold">
+            {title}
+        </h3>
+
+        <ol class="mt-4 space-y-2 text-gray-500">
+            {
+                points.map((point, index) => (
+                    <li class="flex items-start gap-4">
+                        {points.length > 1 ? (
+                            <span class="w-4 shrink-0 text-right font-semibold text-primary leading-8">
+                                {index + 1}.
+                            </span>
+                        ) : (
+                            <span class="w-4 shrink-0 leading-8" />
+                        )}
+
+                        <p class="flex-1 leading-8">{point}</p>
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</div>

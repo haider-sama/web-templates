@@ -1,0 +1,88 @@
+---
+interface Props {
+    eyebrow: string;
+    title: string;
+    description: string;
+    variant?: "red" | "green" | "emerald" | "amber" | "orange" | "slate";
+}
+
+const { eyebrow, title, description, variant = "red" } = Astro.props;
+
+const variants = {
+    red: {
+        card: "bg-red-500 text-white",
+        eyebrow: "text-red-100/80",
+        description: "text-red-50/90",
+    },
+
+    green: {
+        card: "bg-green-600 text-white",
+        eyebrow: "text-green-100/80",
+        description: "text-green-50/90",
+    },
+
+    emerald: {
+        card: "bg-emerald-100 text-emerald-950",
+        eyebrow: "text-emerald-700",
+        description: "text-emerald-800",
+    },
+
+    amber: {
+        card: "bg-amber-100 text-amber-950",
+        eyebrow: "text-amber-700",
+        description: "text-amber-800",
+    },
+
+    orange: {
+        card: "bg-orange-100 text-orange-950",
+        eyebrow: "text-orange-700",
+        description: "text-orange-800",
+    },
+
+    slate: {
+        card: "bg-slate-900 text-white",
+        eyebrow: "text-slate-300",
+        description: "text-slate-300",
+    },
+};
+---
+
+<div
+    class:list={[
+        "h-full",
+        "rounded-[2rem]",
+        "p-8",
+        "flex",
+        "flex-col",
+        "justify-between",
+        variants[variant].card,
+    ]}
+>
+    <div>
+        <span
+            class:list={[
+                "text-xs",
+                "font-semibold",
+                "uppercase",
+                "tracking-[0.25em]",
+                variants[variant].eyebrow,
+            ]}
+        >
+            {eyebrow}
+        </span>
+
+        <div class="mt-5 text-6xl font-black">
+            <slot name="metric" />
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <h3 class="text-2xl font-bold">
+            {title}
+        </h3>
+
+        <p class:list={["mt-3", "leading-7", variants[variant].description]}>
+            {description}
+        </p>
+    </div>
+</div>

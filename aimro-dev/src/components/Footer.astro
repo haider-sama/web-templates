@@ -1,0 +1,77 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+    {
+        title: "Company",
+        links: [
+            { label: "About Us", href: "/about" },
+            { label: "Press", href: "/press" },
+            { label: "Stay Informed", href: "/stay-informed" },
+            { label: "Investors", href: "/investors" },
+            { label: "Careers", href: "/careers" },
+            { label: "Contact Us", href: "/contact" },
+        ],
+    },
+    {
+        title: "Services",
+        links: [
+            { label: "Engineering Services", href: "/engineering-services" },
+            { label: "Manufacturing", href: "/manufacturing" },
+        ],
+    },
+    {
+        title: "Sectors Served",
+        links: [
+            { label: "Aerospace & Defense", href: "/aerospace-defense" },
+            { label: "Public Safety", href: "/public-safety" },
+            { label: "Industrial", href: "/industrial" },
+        ],
+    },
+    {
+        title: "Resources",
+        links: [
+            { label: "Applications", href: "/applications" },
+            { label: "Whitepapers", href: "/whitepapers" },
+            { label: "Blog", href: "/blog" },
+        ],
+    },
+];
+---
+
+<footer class="bg-secondary text-white">
+    <div class="mx-auto max-w-6xl p-8">
+        <h1 class="mb-16 text-4xl font-bold">AIM ROBOTS</h1>
+
+        <div class="grid grid-cols-2 gap-10 md:grid-cols-4">
+            {
+                footerLinks.map((section) => (
+                    <div>
+                        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider">
+                            {section.title}
+                        </h3>
+
+                        <ul class="space-y-4">
+                            {section.links.map((link) => (
+                                <li>
+                                    <a
+                                        href={link.href}
+                                        class="text-gray-400 transition-colors hover:text-white"
+                                    >
+                                        {link.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div
+            class="mt-16 border-t border-white/10 pt-8 text-center text-sm text-white"
+        >
+            © {currentYear} AIM ROBOTS. All rights reserved.
+        </div>
+    </div>
+</footer>

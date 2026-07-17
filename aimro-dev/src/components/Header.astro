@@ -1,0 +1,54 @@
+---
+import "@/styles/global.css";
+import { Icon } from "astro-icon/components";
+import MobileMenu from "@/components/nav/MobileMenu";
+import NavBar from "@/components/nav/NavBar";
+import { navItems } from "@/data/NavData";
+---
+
+<header class="relative z-50 w-full">
+    <div class="mx-auto max-w-6xl p-8">
+        <!-- Top Row -->
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="select-none text-3xl font-bold">
+                <span class="text-primary">AIM </span>
+                <span>ROBOTS</span>
+            </a>
+
+            <!-- Right -->
+            <div class="hidden items-center gap-4 md:flex">
+                <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition hover:text-primary"
+                >
+                    <Icon name="simple-icons:linkedin" class="h-6 w-6" />
+                </a>
+
+                <a
+                    href="https://x.com/your-company"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition hover:text-primary"
+                    aria-label="X (Twitter)"
+                >
+                    <Icon name="simple-icons:x" class="h-6 w-6" />
+                </a>
+
+                <a
+                    href="/contact"
+                    class="rounded bg-primary px-4 py-2 font-medium text-white
+                    transition hover:opacity-80"
+                >
+                    Contact
+                </a>
+            </div>
+
+            <MobileMenu client:load items={navItems} />
+        </div>
+
+        <NavBar client:load items={navItems} />
+    </div>
+</header>

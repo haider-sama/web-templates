@@ -1,0 +1,70 @@
+---
+import VisionCard from "@/components/card/VisionCard.astro";
+
+const cards = [
+    {
+        number: "01",
+        title: "Human Labor",
+        icon: "mdi:account-hard-hat",
+        points: [
+            "Manufacturing still depends heavily on manual labor.",
+            "Difficult to hire and retain skilled workers.",
+            "Labor costs continue to rise.",
+            "Human skills are difficult to scale across production.",
+        ],
+    },
+    {
+        number: "02",
+        title: "Robotic Automation",
+        icon: "mdi:robot-industrial",
+        points: [
+            "Improves repeatability and consistency.",
+            "Expensive to deploy.",
+            "Rigid and difficult to adapt.",
+            "Requires specialized programming.",
+        ],
+    },
+    {
+        number: "03",
+        title: "AI-Powered Robot Labor",
+        icon: "mdi:robot-industrial",
+        ai: true,
+        featured: true,
+        points: [
+            "Trainable, production-ready robotic workers.",
+            "Deploy rapidly across manufacturing lines.",
+            "Production skills become reusable and scalable.",
+            "Over 50% lower cost than human labor.",
+        ],
+    },
+];
+---
+
+<section class="py-16">
+    <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <!-- Heading -->
+        <div class="max-w-3xl space-y-4">
+            <p
+                class="text-primary text-xl font-semibold uppercase tracking-tight"
+            >
+                Vision
+            </p>
+
+            <h2 class="text-4xl font-bold leading-tight md:text-5xl">
+                Building the AI Operating System for the next generation of
+                manufacturing.
+            </h2>
+
+            <p class="text-lg text-gray-500 leading-8">
+                AIM AI Operating System (AIOS) is an infrastructure platform
+                that turns robots into trainable workers for real-world
+                manufacturing.
+            </p>
+        </div>
+
+        <!-- Progression -->
+        <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
+            {cards.map((card) => <VisionCard {...card} />)}
+        </div>
+    </div>
+</section>

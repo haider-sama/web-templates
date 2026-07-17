@@ -1,0 +1,71 @@
+---
+import GoToMarketStep from "@/components/card/GoToMarketStep.astro";
+
+const steps = [
+    {
+        number: "01",
+        title: "Initial Entry",
+        points: [
+            "train and validate AIOS on robot-assembly critical positions for factory-scale deployment.",
+            "build a domestic robotics manufacturing facility as the first industrial sector. AIOS learns skills in 3C electronics production. Establish RPA execution hardware portfolio in the U.S.",
+        ],
+    },
+    {
+        number: "02",
+        title: "Expansion Strategy",
+        points: [
+            "new deployments in the U.S. 3C electronics production sector.",
+            "expand to a second industrial sector: reshore Southeast Asian woodworking factories.",
+            "robot products selling.",
+        ],
+    },
+    {
+        number: "03",
+        title: "Future Sectors",
+        points: [
+            "Additional deployments in existing sectors; expand into other labor-intensive industrial sectors (home-improvement products, construction materials, etc.), and upper supply chain factories; provide products and solutions in adjacent services area (e.g., robot monitoring and cleaning).",
+        ],
+    },
+    {
+        number: "04",
+        title: "Complete Ecosystem",
+        points: [
+            "Expand to establish vertical supply chain ecosystem for industrial sectors with AIM AIOS for domestic automated production; AIOS evolves into an industrial World Model (skills + domain expertise + foundation models).",
+        ],
+    },
+];
+---
+
+<section class="py-16">
+    <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <div class="max-w-3xl space-y-4">
+            <p
+                class="text-primary text-xl font-semibold uppercase tracking-tight"
+            >
+                Go-to-Market Approach
+            </p>
+
+            <h2 class="text-4xl font-bold leading-tight md:text-5xl">
+                A phased market entry strategy.
+            </h2>
+
+            <p class="text-lg leading-8 text-gray-500">
+                Start with controlled environments, then expand through
+                repeatable skills deployment.
+            </p>
+        </div>
+
+        <div class="mx-auto max-w-4xl">
+            <div class="mt-16">
+                {
+                    steps.map((step, index) => (
+                        <GoToMarketStep
+                            {...step}
+                            last={index === steps.length - 1}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

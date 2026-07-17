@@ -1,0 +1,95 @@
+---
+import HeroCard from "@/components/card/raas/HeroCard.astro";
+import FeatureCard from "@/components/card/raas/FeatureCard.astro";
+---
+
+<section class="py-16">
+    <div class="relative mx-auto max-w-6xl px-4 md:px-8">
+        <!-- Heading -->
+        <div class="max-w-3xl space-y-4">
+            <p
+                class="text-primary text-xl font-semibold uppercase tracking-tight"
+            >
+                Commercial Model
+            </p>
+
+            <h2 class="text-4xl font-bold leading-tight md:text-5xl">
+                Hire AIM's robotic workforce the same way you hire people.
+            </h2>
+
+            <p class="text-lg leading-8 text-gray-500">
+                Flexible commercial options designed for every stage of
+                automation—from Robot-as-a-Service to factory-wide integration.
+            </p>
+        </div>
+
+        <!-- Bento Grid -->
+
+        <div class="mt-20 grid gap-6 lg:grid-cols-12">
+            <!-- Hero -->
+
+            <div class="lg:col-span-8 lg:row-span-2">
+                <HeroCard />
+            </div>
+
+            <!-- Economics -->
+
+            <div class="lg:col-span-4">
+                <FeatureCard
+                    eyebrow="Economics"
+                    title="50%+ Lower Labor Cost"
+                    description="Reduce manufacturing labor costs with Robot-as-a-Service."
+                    variant="red"
+                >
+                    <Fragment slot="metric"> 50% </Fragment>
+                </FeatureCard>
+            </div>
+
+            <!-- Deployment -->
+
+            <div class="lg:col-span-4">
+                <FeatureCard
+                    eyebrow="Deployment"
+                    title="Fast Deployment"
+                    description="Deploy robotic workstations in hours and scale factory-wide within weeks."
+                    variant="emerald"
+                >
+                    <Fragment slot="metric"> Hours </Fragment>
+                </FeatureCard>
+            </div>
+
+            <!-- Robot-as-a-Service -->
+
+            <div class="lg:col-span-4">
+                <FeatureCard
+                    eyebrow="Primary"
+                    title="Robot-as-a-Service"
+                    description="Pay-as-you-go robotic labor with predictable operating costs."
+                    variant="orange"
+                />
+            </div>
+
+            <!-- Equipment Sales -->
+
+            <div class="lg:col-span-4">
+                <FeatureCard
+                    eyebrow="Secondary"
+                    title="Equipment Sales"
+                    description="Purchase robotic systems for customers who prefer ownership."
+                    variant="amber"
+                />
+            </div>
+
+            <!-- Integration -->
+
+            <div class="lg:col-span-12">
+                <FeatureCard
+                    eyebrow="Integration"
+                    title="Customized Integration Services"
+                    description="End-to-end deployment, system integration, and production optimization tailored to your factory."
+                    variant="slate"
+                />
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,79 @@
+---
+const systems = [
+    {
+        name: "AIMEX-01",
+        image: "/images/aimex-01.png",
+        title: "Execution Systems",
+        description: [
+            "AIOS integrates with execution systems to perform workcell tasks.",
+            "Learns quickly from just a few human demonstrations.",
+        ],
+    },
+    {
+        name: "AIMEX-02",
+        image: "/images/aimex-02.png",
+        title: "Autonomous Guided Vehicles",
+        description: [
+            "AIOS integrates with AGVs to handle workpieces and materials transportation.",
+        ],
+    },
+];
+---
+
+<section class="py-16">
+    <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <div class="max-w-3xl">
+            <h2 class="mt-4 text-5xl font-bold">AIM Executor (AIMEX)</h2>
+
+            <p class="mt-6 text-lg leading-8 text-gray-500">
+                AIOS integrates with proven execution hardware to automate
+                manufacturing workflows across the factory floor.
+            </p>
+        </div>
+
+        <div class="space-y-16 mt-16 lg:space-y-32">
+            {
+                systems.map((system, index) => (
+                    <div
+                        class={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16
+                            ${
+                                index % 2 === 0
+                                    ? "[&>*:first-child]:order-2 lg:[&>*:first-child]:order-1"
+                                    : "[&>*:first-child]:order-2"
+                            }`}
+                    >
+                        <div class="flex justify-center">
+                            <img
+                                src={system.image}
+                                alt={system.name}
+                                class="w-full max-w-[512px] h-[448px]
+                                    rounded-[42%_58%_55%_45%/38%_8%_28%_62%]
+                                    object-cover shadow-md
+                                    transition duration-300
+                                    hover:scale-105"
+                            />
+                        </div>
+
+                        <div class="text-center lg:text-left">
+                            <span class="text-primary font-semibold tracking-widest uppercase">
+                                {system.name}
+                            </span>
+
+                            <h3 class="mt-4 text-4xl font-bold">
+                                {system.title}
+                            </h3>
+
+                            <div class="mt-4 space-y-4">
+                                {system.description.map((paragraph) => (
+                                    <p class="text-lg leading-8 text-gray-500">
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

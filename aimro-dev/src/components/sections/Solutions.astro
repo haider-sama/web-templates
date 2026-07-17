@@ -1,0 +1,82 @@
+---
+import AimexSection from "./AimexSection.astro";
+import SolutionSlider from "@/components/SolutionSlider";
+
+const slides = [
+    {
+        id: "01",
+        label: "Learning",
+        title: "Learns New Manufacturing Tasks",
+        description:
+            "Learns new manufacturing tasks from just a few human demonstrations.",
+    },
+    {
+        id: "02",
+        label: "Deployment",
+        title: "Rapid Deployment",
+        description:
+            "Executes human workflows with minimal programming and rapid deployment.",
+    },
+    {
+        id: "03",
+        label: "Safety",
+        title: "Deterministic Execution",
+        description:
+            "Execution is precise, deterministic and certifiable for safety requirements.",
+    },
+    {
+        id: "04",
+        label: "Recovery",
+        title: "Reliable Error Handling",
+        description:
+            "Detects, handles, and recovers from errors and edge cases reliably.",
+    },
+    {
+        id: "05",
+        label: "Knowledge",
+        title: "Captures Manufacturing Expertise",
+        description:
+            "Captures and codifies manufacturing workflows, best practices, and domain expertise from global production environments.",
+    },
+    {
+        id: "06",
+        label: "Scalability",
+        title: "Continuous Skill Growth",
+        description:
+            "Skills and domain expertise are scalable, and improve with each new deployment.",
+    },
+    {
+        id: "07",
+        label: "AI Robotics",
+        title: "Trainable Robotic Worker",
+        description:
+            "Transforms off-the-shelf or proven in-house execution hardware systems into a trainable, experienced robotic worker for workcell operations, factory floor material handling, inventory processing, and factory production workflows.",
+    },
+];
+---
+
+<section class="py-16">
+    <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <!-- Heading -->
+        <div class="max-w-3xl space-y-4">
+            <p
+                class="text-primary text-xl font-semibold uppercase tracking-tight"
+            >
+                AIM Robots' Solution
+            </p>
+
+            <h2 class="text-5xl font-bold leading-tight">
+                AIM AI Operating System (AIOS)
+            </h2>
+
+            <p class="text-lg leading-8 text-gray-500">
+                Train robots through demonstration instead of programming.
+            </p>
+        </div>
+
+        <div class="mt-16">
+            <SolutionSlider client:load slides={slides} />
+            <AimexSection />
+        </div>
+    </div>
+</section>
