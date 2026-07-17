@@ -30,22 +30,17 @@ export default function SolutionSlider({ slides }: Props) {
     };
 
     useEffect(() => {
-        if (paused) return;
-
         const interval = setInterval(() => {
             setDirection("next");
             setActive((prev) => (prev + 1) % slides.length);
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [paused, slides.length]);
+    }, [slides.length]);
 
     return (
         <div
-            className="overflow-hidden rounded-[2rem] border border-gray-300 bg-secondary"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-        >
+            className="overflow-hidden rounded-[2rem] border border-gray-300 bg-secondary">
             {/* Timeline */}
             <div className="hidden border-b border-white/10 p-8 md:block">
                 <div className="relative">
@@ -57,7 +52,10 @@ export default function SolutionSlider({ slides }: Props) {
                     <motion.div
                         className="absolute left-0 top-6 h-px bg-primary"
                         animate={{
-                            width: `${(active / (slides.length - 1)) * 100}%`,
+                            width:
+                                slides.length > 1
+                                    ? `${(active / (slides.length - 1)) * 100}%`
+                                    : "0%"
                         }}
                         transition={{
                             duration: 0.45,
