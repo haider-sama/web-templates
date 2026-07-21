@@ -181,11 +181,12 @@ export default function SolutionSlider({ slides }: Props) {
                             ease: "easeOut",
                         }}
                     >
-                        <h3 className="mt-8 text-5xl font-bold text-gray-200 break-words">
+                        <h3 className="mt-8 text-3xl sm:text-4xl md:text-5xl font-bold 
+                        text-gray-200">
                             {slide.title}
                         </h3>
 
-                        <p className="mt-8 max-w-3xl text-xl leading-9 text-gray-400">
+                        <p className="mt-8 max-w-3xl text-base sm:text-lg md:text-xl leading-7 md:leading-9 text-gray-400">
                             {slide.description}
                         </p>
                     </motion.div>

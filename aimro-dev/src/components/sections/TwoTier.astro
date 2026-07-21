@@ -13,101 +13,149 @@ const tower = [
 ---
 
 <section class="py-16">
-    <div class="mx-auto max-w-6xl px-4 md:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <!-- Heading -->
-        <div class="mx-auto max-w-3xl text-center space-y-4">
+        <div class="mx-auto max-w-3xl text-center">
             <p
-                class="text-primary text-xl font-semibold uppercase tracking-tight"
+                class="text-primary text-lg font-semibold uppercase tracking-wider"
             >
                 AIM AIOS
             </p>
 
-            <h2 class="text-5xl font-bold">
+            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold">
                 Two-Tier Artificial Intelligence Operating System
             </h2>
 
-            <p class="text-lg leading-8 text-gray-500">
+            <p class="mt-8 text-base sm:text-lg leading-8 text-gray-500">
                 AIM AIOS combines demonstration learning, real production data,
                 and intelligent orchestration across workcells and factory
                 operations.
             </p>
         </div>
 
-        <div class="mt-16">
+        <!-- Desktop Layout -->
+        <div
+            class="hidden lg:grid mt-16 grid-cols-[1fr_auto_1fr] items-start gap-8"
+        >
+            <!-- Executor -->
+            <div class="p-8">
+                <h3 class="text-3xl font-bold">AIM Executor</h3>
 
-            <div class="grid gap-8 lg:gap-24 lg:grid-cols-[1fr_auto_1fr]">
-                <div class="flex flex-col items-center text-center lg:items-end lg:text-right">
-                    <h3 class="text-3xl font-bold">AIM Executor</h3>
-                    <p class="mt-2 max-w-sm leading-8 text-gray-500 lg:text-right">
-                        The on-cell
-                        <span class="text-primary">{" "}"Brain"{" "}</span>
-                        with execution layer for workcell operations.
-                    </p>
-                </div>
+                <p class="mt-2 leading-8 text-gray-500">
+                    The on-cell
+                    <span class="text-primary font-semibold"
+                        >{" "}"Brain"{" "}</span
+                    >
+                    with execution layer for workcell operations.
+                </p>
 
-                <div></div>
+                <ul class="mt-8 space-y-8">
+                    {
+                        executor.map((item) => (
+                            <li class="flex items-start gap-4">
+                                <div class="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
+                                <p class="leading-7 text-gray-500">{item}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
 
-                <div class="text-center lg:text-left">
-                    <h3 class="text-3xl font-bold">AIM Tower</h3>
-                    <p class="mt-2 max-w-sm leading-8 text-gray-500">
-                        The line-level
-                        <span class="text-primary">{" "}"Business Brain"{" "}</span>
-                        orchestrating overall production processes.
-                    </p>
+            <!-- AIOS -->
+            <div class="flex h-full items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <div class="h-16 w-px bg-primary/40"></div>
+
+                    <div
+                        class="rounded-full border border-primary bg-secondary px-8 py-4
+                    text-lg font-semibold tracking-widest text-primary"
+                    >
+                        AIOS
+                    </div>
+
+                    <div class="h-16 w-px bg-primary/40"></div>
                 </div>
             </div>
 
-            <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
-  
-                <div class="flex flex-col items-end">
-                    <div class="space-y-8">
-                        {
-                            executor.map((item) => (
-                                <div class="flex items-center justify-center lg:justify-end">
-                                    <p class="max-w-xs text-center lg:text-right leading-7 text-gray-500">
-                                        {item}
-                                    </p>
+            <!-- Tower -->
+            <div class="p-8">
+                <h3 class="text-3xl font-bold">AIM Tower</h3>
 
-                                    <div class="ml-4 h-2 w-2 rounded-full bg-primary" />
-                                    <div class="h-px w-16 bg-primary" />
-                                </div>
-                            ))
-                        }
-                    </div>
+                <p class="mt-2 leading-8 text-gray-500">
+                    The line-level
+                    <span class="text-primary font-semibold">
+                        {" "}"Business Brain"{" "}
+                    </span>
+                    orchestrating overall production processes.
+                </p>
+
+                <ul class="mt-8 space-y-8">
+                    {
+                        tower.map((item) => (
+                            <li class="flex items-start gap-4">
+                                <div class="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
+                                <p class="leading-7 text-gray-500">{item}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Layout -->
+        <div class="mt-16 flex flex-col gap-8 lg:hidden">
+            <div class="flex justify-center">
+                <div
+                    class="rounded-full border border-primary
+                    bg-secondary px-8 py-4
+                    text-primary font-semibold tracking-widest"
+                >
+                    AIOS
                 </div>
+            </div>
 
-                <div class="flex items-center justify-center">
-                    <div class="relative flex items-center justify-center">
-                        
-                        <div class="absolute hidden h-64 w-px bg-white/10 lg:block"></div>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold">AIM Executor</h3>
 
-                        <div
-                            class="relative rounded-full border border-primary
-                           bg-secondary px-8 py-4
-                           font-semibold tracking-wider text-primary"
-                        >
-                            AIOS
-                        </div>
-                    </div>
-                </div>
+                <p class="mt-2 text-gray-500 leading-7">
+                    The on-cell
+                    <span class="text-primary font-semibold">{" "}"Brain"{" "}</span>
+                    with execution layer for workcell operations.
+                </p>
 
-                <div class="flex flex-col">
-                    <div class="space-y-8">
-                        {
-                            tower.map((item) => (
-                                <div class="flex items-center justify-center lg:justify-start">
-                                    <div class="h-px w-16 bg-primary" />
-                                    <div class="mr-4 h-2 w-2 rounded-full bg-primary" />
+                <ul class="mt-4 space-y-4">
+                    {
+                        executor.map((item) => (
+                            <li class="flex items-start gap-2">
+                                <div class="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
+                                <p class="leading-7 text-gray-500">{item}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
 
-                                    <p class="max-w-xs text-center lg:text-left 
-                                    leading-7 text-gray-500">
-                                        {item}
-                                    </p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </div>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold">AIM Tower</h3>
+
+                <p class="mt-2 text-gray-500 leading-7">
+                    The line-level
+                    <span class="text-primary font-semibold">
+                        {" "}"Business Brain"{" "}
+                    </span>
+                    orchestrating overall production processes.
+                </p>
+
+                <ul class="mt-4 space-y-4">
+                    {
+                        tower.map((item) => (
+                            <li class="flex items-start gap-2">
+                                <div class="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
+                                <p class="leading-7 text-gray-500">{item}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         </div>
     </div>
